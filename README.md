@@ -70,15 +70,18 @@ sudo ./tools/make-assets.sh
 ## Deployment
 `ignoreScriptInjectFilters` must be set to `true`. It would be near impossible vouch for any scriptlet injection.
 `ignoreRedirectFilters` should also be considered to be `true`.
-
+`cloudStorageEnabled` is a setting which respects Chrome's policy, but could also be set to `false` for an extra layer.
 
 This can be done with an `adminSettings` file with
 ````
   {
-    "hiddenSettings": {
-    "ignoreScriptInjectFilters": true,
-    "ignoreRedirectFilters": true
-    }
+      "userSettings": {
+            "cloudStorageEnabled": false,
+      },
+      "hiddenSettings": {
+            "ignoreScriptInjectFilters": true,
+            "ignoreRedirectFilters": true
+      }
   }
   ````
 
